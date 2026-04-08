@@ -124,3 +124,18 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+DATABASES = {
+    'default': {
+        'ENGINE': os.environ.get('DB_ENGINE'),
+        'NAME':   os.environ.get('DB_NAME'),
+        'USER':   os.environ.get('DB_USER'),
+        'PASSWORD': os.environ.get('DB_PASSWORD'),
+        'HOST':   os.environ.get('DB_HOST'),
+        'PORT':   '',
+        'OPTIONS': {
+            'driver': 'ODBC Driver 18 for SQL Server',
+            'Encrypt': 'yes',
+            'TrustServerCertificate': 'no',
+        },
+    }
+}
